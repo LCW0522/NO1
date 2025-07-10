@@ -1,364 +1,106 @@
-textarea<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Name - Resume</title>
-    <style>
-      /* Basic CSS for a clean look */
-      body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        margin: 0;
-        padding: 20px;
-        background-color: #f4f4f4;
-        color: #333;
-      }
-      .container {
-        max-width: 900px;
-        margin: 20px auto;
-        background: #fff;
-        padding: 30px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-      }
-      header {
-        text-align: center;
-        margin-bottom: 30px;
-      }
-      header h1 {
-        margin: 0;
-        color: #2c3e50;
-        font-size: 2.5em;
-      }
-      header p {
-        margin: 5px 0;
-        color: #7f8c8d;
-      }
-      section {
-        margin-bottom: 25px;
-      }
-      section h2 {
-        border-bottom: 2px solid #3498db;
-        padding-bottom: 8px;
-        margin-bottom: 15px;
-        color: #34495e;
-        font-size: 1.8em;
-      }
-      .experience-item,
-      .education-item,
-      .project-item {
-        margin-bottom: 15px;
-      }
-      .experience-item h3,
-      .education-item h3,
-      .project-item h3 {
-        margin: 0;
-        color: #2980b9;
-        font-size: 1.2em;
-      }
-      .experience-item p,
-      .education-item p,
-      .project-item p {
-        margin: 5px 0;
-      }
-      ul {
-        list-style-type: disc;
-        margin-left: 20px;
-        padding: 0;
-      }
-      ul li {
-        margin-bottom: 5px;
-      }
-      .skills-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-      }
-      .skills-list span {
-        background-color: #ecf0f1;
-        padding: 5px 10px;
-        border-radius: 5px;
-        color: #2c3e50;
-      }
-      footer {
-        text-align: center;
-        margin-top: 30px;
-        font-size: 0.9em;
-        color: #7f8c8d;
-      }
-
-      /* Responsive adjustments */
-      @media (max-width: 768px) {
-        body {
-          padding: 10px;
-        }
-        .container {
-          margin: 10px auto;
-          padding: 20px;
-        }
-        header h1 {
-          font-size: 2em;
-        }
-        section h2 {
-          font-size: 1.5em;
-        }
-      }
-    </style>
+    <title>火龍果</title>
   </head>
   <body>
-    <div class="container">
-      <header>
-        <h1>陳惟楷的履歷</h1>
-        <p>行銷企劃 / 行銷領域</p>
-        <p>
-          Email:
-          <a href="bryan0989206990@gmail.com">bryan0989206990@gmail.com</a> |
-          電話: 0989206990| LinkedIn:
-          <a href="https://www.linkedin.com/in/yourprofile" target="_blank"
-            >0989206990</a
-          >
-          | 作品集:
-          <a href="https://github.com/yourprofile" target="_blank"
-            >github.com/yourprofile</a
-          >
-        </p>
-      </header>
-
-      <hr />
-
-      <section id="summary">
-        <h2>個人簡述</h2>
-        <p>
-          在這裡寫一段簡短而有力的自我介紹，強調你的主要技能、經驗和職業目標。例如：一位經驗豐富的軟體工程師，專精於前端開發，具備開發高效能、使用者友善的Web應用程式的能力。熱衷於學習新技術並解決複雜問題。
-        </p>
-      </section>
-
-      <hr />
-
-      <section id="experience">
-        <h2>工作經歷</h2>
-        <div class="experience-item">
-          <h3>職位名稱</h3>
-          <p>
-            <strong>公司名稱</strong> | 城市, 國家 | 年/月 - 年/月 (或 至今)
-          </p>
-          <ul>
-            <li>
-              簡潔地列出你在該職位的主要職責和成就。使用動詞開頭，並盡可能量化結果。
-            </li>
-            <li>例如：開發並維護響應式使用者介面，提高了20%的使用者參與度。</li>
-            <li>負責專案A的端到端開發，確保按時交付並符合所有技術要求。</li>
-            <li>
-              與跨職能團隊合作，優化了現有系統的性能，減少了15%的載入時間。
-            </li>
-          </ul>
-        </div>
-        <div class="experience-item">
-          <h3>職位名稱</h3>
-          <p><strong>公司名稱</strong> | 城市, 國家 | 年/月 - 年/月</p>
-          <ul>
-            <li>簡潔地列出你在該職位的主要職責和成就。</li>
-            <li>使用動詞開頭，並盡可能量化結果。</li>
-          </ul>
-        </div>
-      </section>
-
-      <hr />
-
-      <section id="education">
-        <h2>學歷</h2>
-        <div class="education-item">
-          <h3>學位名稱 (例如：資訊工程學士)</h3>
-          <p><strong>學校名稱</strong> | 城市, 國家 | 年/月 - 年/月</p>
-          <ul>
-            <li>相關課程、榮譽或專案（可選）。</li>
-            <li>例如：主修資料結構與演算法、資料庫管理、網路安全。</li>
-          </ul>
-        </div>
-      </section>
-
-      <hr />
-
-      <section id="skills">
-        <h2>技能</h2>
-        <div class="skills-list">
-          <span>JavaScript</span>
-          <span>Python</span>
-          <span>HTML5</span>
-          <span>CSS3</span>
-          <span>React</span>
-          <span>Node.js</span>
-          <span>SQL</span>
-          <span>Git</span>
-          <span>專案管理</span>
-          <span>溝通協調</span>
-        </div>
-      </section>
-
-      <hr />
-
-      <section id="projects">
-        <h2>個人專案</h2>
-        <div class="project-item">
-          <h3>
-            專案名稱
-            <small
-              >(<a href="#" target="_blank">GitHub連結</a> |
-              <a href="#" target="_blank">部署連結</a>)</small
-            >
-          </h3>
-          <p><strong>專案日期或期間</strong></p>
-          <ul>
-            <li>
-              簡要描述專案的textarea<!DOCTYPE html>
-              <html lang="en">
-                <head>
-                  <meta charset="UTF-8" />
-                  <meta
-                    name="viewport"
-                    content="width=device-width, initial-scale=1.0"
-                  />
-                  <title>火龍果</title>
-                </head>
-                <body>
-                  <header>
-                    <h1><center>erica</center></h1>
-                    <img width="100%" src="./22.jpg" alt="火龍果圖片" />
-                    <h2>火龍果</h2>
-                    <p>火龍果是一種熱帶水果，外觀獨特，味道鮮美。</p>
-                  </header>
-                  <a
-                    href="https://www.facebook.com/ren.xin.yun.2025?locale=zh_TW"
-                    target="_blank"
-                    ><img src="./123.jpg" alt="火龍果圖片" />
-                  </a>
-                  <strong>
-                    <h3>特長</h3>
-                    <ul>
-                      <li>
-                        火龍果的果肉富含維生素C和纖維素，有助於增強免疫系統和促進消化。
-                      </li>
-                      <li>
-                        它的外觀獨特，鮮豔的紅色或黃色外皮上有綠色的鱗片，十分吸引人。
-                      </li>
-                      <li>
-                        火龍果的味道清甜可口，常被用來製作沙拉、果汁或甜點。
-                      </li>
-                      <li>
-                        它還具有抗氧化特性，有助於減少自由基對身體的損害。
-                      </li>
-                    </ul>
-                  </strong>
-                  <main>
-                    <p>
-                      <span style="color: red">火龍果</span
-                      >，又稱為紅龍果或仙人掌果，是一種熱帶水果，原產於中美洲和南美洲。它的外觀像是一個大大的粉紅色或黃色的球，上面有綠色的鱗片。火龍果的果肉通常是白色或紅色，並且含有許多小黑籽。這種水果不僅味道鮮美，而且營養豐富，含有大量的維生素C、纖維和抗氧化劑。
-                    </p>
-                    <div>
-                      學歷
-                      <ul>
-                        <li>火龍果大學<small>2000-2010</small></li>
-                        <li><del>蘋果大學</del></li>
-                      </ul>
-                    </div>
-                    行事曆:
-                    <table border="1" style="width: 100%">
-                      <thead>
-                        <tr>
-                          <th></th>
-                          <th>上午</th>
-                          <th>中午</th>
-                          <th>下午</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>水果品種</td>
-                          <td>火龍果</td>
-                          <td>奇異果</td>
-                          <td>香蕉</td>
-                        </tr>
-                        <tr>
-                          <td>不栽種</td>
-                          <td>西瓜</td>
-                          <td>哈密瓜</td>
-                          <td>葡萄</td>
-                        </tr>
-                      </tbody>
-                      <tfoot>
-                        <tr>
-                          <td>結論</td>
-                          <td colspan="3"><center>好吃</center></td>
-                        </tr>
-                      </tfoot>
-                    </table>
-                    <form action="">
-                      <input type="text" placeholder="請輸入姓名" />
-                      <input type="email" placeholder="請輸入電子郵件" />
-                      <input type="password" placeholder="請輸入密碼" />
-                      <div>
-                        開心嗎？
-                        <label><input type="radio" name="happy" />是</label>
-                        <label><input type="radio" name="happy" />否</label>
-                      </div>
-                      <div>
-                        喜歡的水果
-                        <label
-                          ><input
-                            type="checkbox"
-                            name="fruit"
-                            value="apple"
-                          />蘋果</label
-                        >
-                        <label
-                          ><input
-                            type="checkbox"
-                            name="fruit"
-                            value="banana"
-                          />香蕉</label
-                        >
-                      </div>
-                      <div>
-                        備註
-                        <textarea name="" id=""></textarea>
-                      </div>
-                      <div>
-                        國家
-                        <select name="" id="">
-                          <option value="taiwan">台灣</option>
-                          <option value="japan">日本</option>
-                          <option value="usa">美國</option>
-                        </select>
-                      </div>
-                      <button>送出</button>
-                    </form>
-                  </main>
-                </body>
-              </html>
-              目的、你的角色和所使用的技術。
-            </li>
-            <li>
-              例如：開發了一個基於React的任務管理應用程式，包含使用者身份驗證和資料儲存功能。
-            </li>
-            <li>應用了Node.js和Express構建後端API。</li>
-          </ul>
-        </div>
-      </section>
-
-      <hr />
-
-      <section id="awards-certifications" style="display: none">
-        <h2>獎項與證照</h2>
+    <header>
+      <h1><center>erica</center></h1>
+      <img width="100%" src="./22.jpg" alt="火龍果圖片" />
+      <h2>火龍果</h2>
+      <p>火龍果是一種熱帶水果，外觀獨特，味道鮮美。</p>
+    </header>
+    <a
+      href="https://www.facebook.com/ren.xin.yun.2025?locale=zh_TW"
+      target="_blank"
+      ><img src="./123.jpg" alt="火龍果圖片" />
+    </a>
+    <strong>
+      <h3>特長</h3>
+      <ul>
+        <li>火龍果的果肉富含維生素C和纖維素，有助於增強免疫系統和促進消化。</li>
+        <li>它的外觀獨特，鮮豔的紅色或黃色外皮上有綠色的鱗片，十分吸引人。</li>
+        <li>火龍果的味道清甜可口，常被用來製作沙拉、果汁或甜點。</li>
+        <li>它還具有抗氧化特性，有助於減少自由基對身體的損害。</li>
+      </ul>
+    </strong>
+    <main>
+      <p>
+        <span style="color: red">火龍果</span
+        >，又稱為紅龍果或仙人掌果，是一種熱帶水果，原產於中美洲和南美洲。它的外觀像是一個大大的粉紅色或黃色的球，上面有綠色的鱗片。火龍果的果肉通常是白色或紅色，並且含有許多小黑籽。這種水果不僅味道鮮美，而且營養豐富，含有大量的維生素C、纖維和抗氧化劑。
+      </p>
+      <div>
+        學歷
         <ul>
-          <li>獎項名稱, 頒發機構 (年/月)</li>
-          <li>證照名稱, 頒發機構 (年/月)</li>
+          <li>火龍果大學<small>2000-2010</small></li>
+          <li><del>蘋果大學</del></li>
         </ul>
-      </section>
-
-      <footer>
-        <p>&copy; 2025 陳惟楷. All rights reserved.</p>
-      </footer>
-    </div>
+      </div>
+      行事曆:
+      <table border="1" style="width: 100%">
+        <thead>
+          <tr>
+            <th></th>
+            <th>上午</th>
+            <th>中午</th>
+            <th>下午</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>水果品種</td>
+            <td>火龍果</td>
+            <td>奇異果</td>
+            <td>香蕉</td>
+          </tr>
+          <tr>
+            <td>不栽種</td>
+            <td>西瓜</td>
+            <td>哈密瓜</td>
+            <td>葡萄</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>結論</td>
+            <td colspan="3"><center>好吃</center></td>
+          </tr>
+        </tfoot>
+      </table>
+      <form action="">
+        <input type="text" placeholder="請輸入姓名" />
+        <input type="email" placeholder="請輸入電子郵件" />
+        <input type="password" placeholder="請輸入密碼" />
+        <div>
+          開心嗎？
+          <label><input type="radio" name="happy" />是</label>
+          <label><input type="radio" name="happy" />否</label>
+        </div>
+        <div>
+          喜歡的水果
+          <label>
+            <input type="checkbox" name="fruit" value="apple" />蘋果</label
+          >
+          <label
+            ><input type="checkbox" name="fruit" value="banana" />香蕉</label
+          >
+        </div>
+        <div>
+          備註
+          <textarea name="" id=""></textarea>
+        </div>
+        <div>
+          國家
+          <select name="" id="">
+            <option value="taiwan">台灣</option>
+            <option value="japan">日本</option>
+            <option value="usa">美國</option>
+          </select>
+        </div>
+        <button>送出</button>
+      </form>
+    </main>
   </body>
 </html>
