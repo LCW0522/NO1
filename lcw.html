@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lcw</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('./ba.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            color: black; /* 把字改為黑色 */
+        }
+
+        h1, h3 {
+            text-align: center;
+        }
+
+        .center-img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
+
+        ul {
+            text-align: center;
+            list-style-position: inside;
+        }
+
+        a {
+            color: #0000cc; /* 深藍色連結，適合白底圖 */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: rgba(255, 255, 255, 0.9); /* 白底半透明，讓字清楚 */
+        }
+
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: center;
+        }
+
+        caption {
+            caption-side: top;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>LCW</h1>
+    </header>
+
+    <img src="./st.jpg" alt="I'm a cat" class="center-img">
+
+    <p style="text-align: center;">
+        <a href="https://www.pinterest.com/" target="_blank">googfle lin</a>
+    </p>
+
+    <section>
+        <h3>特長</h3>
+        <ul>
+            <li>頭髮</li>
+            <li>程式</li> 
+            <li><small>2000-2024</small></li>
+        </ul>
+    </section>
+
+    <!-- 行事曆 -->
+    <table>
+        <caption>行事曆</caption>
+        <thead>
+            <tr>
+                <th></th>
+                <th>上午</th>
+                <th>中午</th>
+                <th>下午</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>專業能力</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>飲食</td>
+                <td>漢堡</td>
+                <td>雞排</td>
+                <td>串串</td>
+           </tr>
+    </tbody>
+</table>
+<form action="">
+  <input type="text" placeholder="請輸入姓名">
+  <input type="number" placeholder="請輸入年齡">
+  <input type="tel" placeholder="請輸入電話">
+  <input type="password" placeholder="請輸入">
+  <input type="email" placeholder="請輸入">
+  <label><input type="checkbox" />是</label>
+        <label><input type="checkbox" />否</label>
+         <div>
+          喜歡的水果
+          <label><input type="radio" name="fruit" />蘋果</label>
+          <label><input type="radio" name="fruit" />香蕉</label>
+          <label><input type="radio" name="fruit" />橘子</label>
+        </div>
+  <button>送出</button>
+</form>
+  </body>
+</html>
