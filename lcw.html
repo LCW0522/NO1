@@ -1,125 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lcw</title>
-    <link rel="stylesheet" href="./css.css">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-image: url('./ba.lcw.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            font-family: Arial, sans-serif;
-            color: black; /* 把字改為黑色 */
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LCW</title>
+  <link rel="stylesheet" href="./css.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('./ba.lcw.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      font-family: Arial, sans-serif;
+      color: #5c4a4a; /* 深灰偏粉，適合嫩粉 */
+    }
 
-        h1, h3 {
-            text-align: center;
-        }
+    h1, h3 {
+      text-align: center;
+      color: #d281a2;
+    }
 
-        .center-img {
-            display: block;
-            margin: 0 auto;
-            max-width: 100%;
-            height: auto;
-        }
+    .center-img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      border: 4px solid #f7b8d0;
+    }
 
-        ul {
-            text-align: center;
-            list-style-position: inside;
-        }
+    ul {
+      text-align: center;
+      list-style-position: inside;
+      padding: 0;
+    }
 
-        a {
-            color: #0000cc; /* 深藍色連結，適合白底圖 */
-        }
+    a {
+      color: #d26c9b;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            background-color: rgba(255, 255, 255, 0.9); /* 白底半透明，讓字清楚 */
-        }
+    table {
+      width: 90%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      background-color: rgba(255, 240, 245, 0.95); /* 嫩粉白透明背景 */
+      border: 2px solid #f4b2cc;
+    }
 
-        th, td {
-            border: 1px solid #000;
-            padding: 8px;
-            text-align: center;
-        }
+    th, td {
+      border: 1px solid #f4b2cc;
+      padding: 10px;
+      text-align: center;
+    }
 
-        caption {
-            caption-side: top;
-            font-weight: bold;
-            font-size: 1.2em;
-            margin: 10px;
-        }
-    </style>
+    caption {
+      caption-side: top;
+      font-weight: bold;
+      font-size: 1.3em;
+      color: #c2618c;
+      margin-bottom: 8px;
+    }
+
+    form {
+      width: 90%;
+      margin: 0 auto 30px;
+      padding: 20px;
+      background-color: rgba(255, 228, 240, 0.85);
+      border-radius: 10px;
+      border: 2px solid #f4b2cc;
+    }
+
+    input, select, textarea {
+      display: block;
+      width: 90%;
+      margin: 8px auto;
+      padding: 8px;
+      border: 1px solid #e9a9c1;
+      border-radius: 6px;
+      font-size: 1em;
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      width: auto;
+      margin-right: 6px;
+    }
+
+    label {
+      display: inline-block;
+      margin: 6px;
+      color: #874a63;
+    }
+
+    .blue-text, .green-text {
+      font-weight: bold;
+      margin-bottom: 4px;
+      display: inline-block;
+      color: #d26c9b;
+    }
+
+    button {
+      background-color: #f7b8d0;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 1em;
+      color: white;
+      cursor: pointer;
+      display: block;
+      margin: 20px auto 0;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e890b3;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>LCW</h1>
-    </header>
+  <header>
+    <h1>LCW</h1>
+  </header>
 
-    <img src="./cat.lcw.jpg" alt="I'm a cat" class="center-img">
+  <img src="./cat.lcw.jpg" alt="I'm a cat" class="center-img" />
 
-    <p style="text-align: center;">
-        <a href="https://www.pinterest.com/" target="_blank">googfle lin</a>
-    </p>
+  <p style="text-align: center;">
+    <a href="https://www.pinterest.com/" target="_blank">googfle lin</a>
+  </p>
 
-    <section>
-        <h3>特長</h3>
-        <ul>
-            <li>頭髮</li>
-            <li>程式</li> 
-            <li><small>2000-2024</small></li>
-        </ul>
-    </section>
+  <section>
+    <h3>特長</h3>
+    <ul>
+      <li>頭髮</li>
+      <li>程式</li> 
+      <li><small>2000-2024</small></li>
+    </ul>
+  </section>
 
-    <!-- 行事曆 -->
-    <table>
-        <caption>行事曆</caption>
-        <thead>
-            <tr>
-                <th></th>
-                <th>上午</th>
-                <th>中午</th>
-                <th>下午</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>專業能力</td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>飲食</td>
-                <td>漢堡</td>
-                <td>雞排</td>
-                <td>串串</td>
-           </tr>
+  <table>
+    <caption>行事曆</caption>
+    <thead>
+      <tr>
+        <th></th>
+        <th>上午</th>
+        <th>中午</th>
+        <th>下午</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>專業能力</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>飲食</td>
+        <td>漢堡</td>
+        <td>雞排</td>
+        <td>串串</td>
+      </tr>
     </tbody>
-</table>
-<form action="">
-  <input type="text" placeholder="請輸入姓名">
-  <input type="number" placeholder="請輸入年齡">
-  <input type="tel" placeholder="請輸入電話">
-  <input type="password" placeholder="請輸入">
-  <input type="email" placeholder="請輸入">
-  <label><input type="checkbox" />是</label>
-        <label><input type="checkbox" />否</label>
-         <div>
-          喜歡的水果
-          <label><input type="radio" name="fruit" />蘋果</label>
-          <label><input type="radio" name="fruit" />香蕉</label>
-          <label><input type="radio" name="fruit" />橘子</label>
-        </div>
-  <button>送出</button>
-</form>
-  </body>
+  </table>
+
+  <form>
+    <input type="text" placeholder="請輸入姓別">
+    <input type="number" placeholder="請輸入年齡">
+    <input type="tel" placeholder="請輸入姓名">
+    <input type="password" placeholder="電話">
+    <input type="email" placeholder="EMAIL">
+    <label><input type="checkbox" />是</label>
+    <label><input type="checkbox" />否</label>
+    <div>
+      喜歡的水果
+      <label><input type="radio" name="fruit" />芒果</label>
+      <label><input type="radio" name="fruit" />香蕉</label>
+      <label><input type="radio" name="fruit" />橘子</label>
+    </div>
+    <div class="blue">
+      <span class="blue-text">備註</span>
+      <textarea rows="3"></textarea>
+    </div>
+    <div>
+      <span class="green-text">國家</span>
+      <select>
+        <option value="TW">台灣</option>
+        <option value="JP">日本</option>
+        <option value="US">美國</option>
+        <option value="CN">中國</option>
+      </select>
+    </div>
+    <button>送出</button>
+  </form>
+</body>
 </html>
