@@ -1,3 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LCW</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('./ba.lcw.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      font-family: Arial, sans-serif;
+      color: #5c4a4a;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 30px 20px;
+      background-color: rgba(255, 240, 245, 0.88);
+      border-radius: 12px;
+      box-shadow: 0 0 10px #f3c7d8;
+    }
+
+    h1, h3 {
+      text-align: center;
+      color: #d281a2;
+      margin-bottom: 20px;
+    }
+
+    .center-img {
+      display: block;
+      margin: 0 auto 20px;
+      width: 250px;
+      height: auto;
+      border-radius: 12px;
+      border: 4px solid #f7b8d0;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .center-img:hover {
+      transform: rotate(7deg) scale(1.05);
+    }
+
+    a {
+      color: #d26c9b;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      margin: 8px 0;
+      font-size: 1.1em;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: rgba(255, 250, 252, 0.95);
+      border: 2px solid #f4b2cc;
+      margin-bottom: 30px;
+    }
+
+    th, td {
+      border: 1px solid #f4b2cc;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #fddbea;
+    }
+
+    tr:hover {
+      background-color: #fff0f5;
+    }
+
+    caption {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #c2618c;
+      margin: 10px 0;
+    }
+
+    form {
+      padding: 20px;
+      background-color: rgba(255, 228, 240, 0.9);
+      border-radius: 10px;
+      border: 2px solid #f4b2cc;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      color: #874a63;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #e9a9c1;
+      border-radius: 6px;
+      font-size: 1em;
+      box-sizing: border-box;
+    }
+
+    .checkbox-group, .radio-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    button {
+      background-color: #f7b8d0;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-size: 1em;
+      color: white;
+      cursor: pointer;
+      display: block;
+      margin: 30px auto 0;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e890b3;
+    }
+
+    /* 愛心動畫區塊 */
+    .heart-container {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      pointer-events: none;
+      z-index: 1000;
+    }
+
+    .heart {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      background-color: #f78fb3;
+      transform: rotate(45deg);
+      animation: floatUp 1.2s ease-out forwards;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      background-color: #f78fb3;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -12px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -12px;
+      top: 0;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-120px) rotate(45deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>LCW</h1>
+
+    <img src="./cat.lcw.jpg" alt="I'm a cat" class="center-img" />
+
+    <p style="text-align: center;">
+      <a href="https://www.pinterest.com/" target="_blank">媽咪愛的美甲參考連結 🐾</a>
+    </p>
+
+    <section>
+      <h3>自介</h3>
+      <ul>
+        <li>男生</li>
+        <li>可愛</li>
+        <li><small>111.05</small></li>
+      </ul>
+    </section>
+
+    <table>
+      <caption>行事曆</caption>
+      <thead>
+        <tr>
+          <th>分類</th>
+          <th>上午</th>
+          <th>中午</th>
+          <th>下午</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>專業能力</td>
+          <td>吃飯</td>
+          <td>睡覺</td>
+          <td>搗蛋</td>
+        </tr>
+        <tr>
+          <td>飲食</td>
+          <td>鮭魚</td>
+          <td>紅蘿蔔</td>
+          <td>雞肉</td>
+        </tr>
+      </tbody>
+    </table>
+
 <form>
   <div class="form-group">
     <label for="gender">寵物姓別</label>
@@ -54,3 +299,28 @@
 
   <button type="submit">送出表單</button>
 </form>
+
+ 
+  <div class="heart-container" id="heartContainer"></div>
+
+ 
+  <script>
+    const button = document.querySelector('button');
+    const heartContainer = document.getElementById('heartContainer');
+
+    button.addEventListener('click', function (e) {
+      e.preventDefault(); // 不跳轉表單
+
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = `${Math.random() * 100 - 50}px`; // 隨機偏移
+
+      heartContainer.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 1200);
+    });
+  </script>
+</body>
+</html>
