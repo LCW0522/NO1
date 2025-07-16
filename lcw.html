@@ -39,6 +39,11 @@
       height: auto;
       border-radius: 12px;
       border: 4px solid #f7b8d0;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .center-img:hover {
+      transform: rotate(7deg) scale(1.05);
     }
 
     a {
@@ -120,16 +125,9 @@
 
     .checkbox-group, .radio-group {
       display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 10px;
-    }
-
-    .checkbox-group label,
-    .radio-group label {
-      display: flex;
       align-items: center;
-      font-weight: normal;
+      gap: 12px;
+      margin-top: 8px;
     }
 
     button {
@@ -147,6 +145,56 @@
 
     button:hover {
       background-color: #e890b3;
+    }
+
+    /* 愛心動畫區塊 */
+    .heart-container {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      pointer-events: none;
+      z-index: 1000;
+    }
+
+    .heart {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      background-color: #f78fb3;
+      transform: rotate(45deg);
+      animation: floatUp 1.2s ease-out forwards;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      background-color: #f78fb3;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -12px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -12px;
+      top: 0;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-120px) rotate(45deg);
+        opacity: 0;
+      }
     }
   </style>
 </head>
@@ -205,7 +253,7 @@
       </div>
 
       <div class="form-group">
-        <label>是否黏人</label>
+        <label style="margin-bottom: 8px;">是否黏人</label>
         <div class="checkbox-group">
           <label><input type="checkbox"> 是</label>
           <label><input type="checkbox"> 否</label>
@@ -213,7 +261,7 @@
       </div>
 
       <div class="form-group">
-        <label>喜歡的零食</label>
+        <label style="margin-bottom: 8px;">喜歡的零食</label>
         <div class="radio-group">
           <label><input type="radio" name="fruit"> 凍乾</label>
           <label><input type="radio" name="fruit"> 蝦子</label>
@@ -221,8 +269,8 @@
         </div>
       </div>
 
-           <div class="form-group">
-        <span class="section-title">備註</span>
+      <div class="form-group">
+        <label>備註</label>
         <textarea rows="3"></textarea>
       </div>
 
@@ -239,5 +287,28 @@
       <button type="submit">送出表單</button>
     </form>
   </div>
+
+  <!-- 愛心動畫容器 -->
+  <div class="heart-container" id="heartContainer"></div>
+
+  <!-- JavaScript: 愛心動畫 -->
+  <script>
+    const button = document.querySelector('button');
+    const heartContainer = document.getElementById('heartContainer');
+
+    button.addEventListener('click', function (e) {
+      e.preventDefault(); // 不跳轉表單
+
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = `${Math.random() * 100 - 50}px`; // 隨機偏移
+
+      heartContainer.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 1200);
+    });
+  </script>
 </body>
 </html>
