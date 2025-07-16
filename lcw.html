@@ -283,19 +283,13 @@
 
    <script>
     const form = document.getElementById('petForm');
-
-    form.addEventListener('submit', function(e) {
+    const thankPopup = document.getElementById('thankPopup');
+    form.addEventListener('submit', e => {
       e.preventDefault();
-
-      const bubble = document.createElement('div');
-      bubble.className = 'bubble';
-      bubble.innerText = '感謝您的填寫！';
-
-      document.body.appendChild(bubble);
-
+      thankPopup.style.display = 'block';
       setTimeout(() => {
-        bubble.remove();
-      }, 1200);
+        thankPopup.style.display = 'none';
+      }, 2000);
     });
   </script>
 </body>
