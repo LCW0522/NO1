@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LCW</title>
+  <title>LCW 可愛小檔案</title>
   <style>
     body {
       margin: 0;
@@ -20,34 +20,25 @@
     .container {
       max-width: 800px;
       margin: 0 auto;
-      padding: 20px;
-      background-color: rgba(255, 240, 245, 0.8);
+      padding: 30px 20px;
+      background-color: rgba(255, 240, 245, 0.88);
       border-radius: 12px;
+      box-shadow: 0 0 10px #f3c7d8;
     }
 
     h1, h3 {
       text-align: center;
       color: #d281a2;
-      margin: 20px 0;
+      margin-bottom: 20px;
     }
 
     .center-img {
       display: block;
       margin: 0 auto 20px;
-      width: 300px;
+      width: 250px;
       height: auto;
       border-radius: 12px;
       border: 4px solid #f7b8d0;
-    }
-
-    ul {
-      text-align: center;
-      list-style: none;
-      padding: 0;
-    }
-
-    ul li {
-      margin: 8px 0;
     }
 
     a {
@@ -56,12 +47,27 @@
       font-weight: bold;
     }
 
+    section {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      margin: 8px 0;
+      font-size: 1.1em;
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 20px;
       background-color: rgba(255, 250, 252, 0.95);
       border: 2px solid #f4b2cc;
+      margin-bottom: 30px;
     }
 
     th, td {
@@ -70,26 +76,41 @@
       text-align: center;
     }
 
+    th {
+      background-color: #fddbea;
+    }
+
+    tr:hover {
+      background-color: #fff0f5;
+    }
+
     caption {
-      caption-side: top;
+      font-size: 1.2em;
       font-weight: bold;
-      font-size: 1.3em;
       color: #c2618c;
-      margin-bottom: 10px;
+      margin: 10px 0;
     }
 
     form {
-      margin-top: 30px;
       padding: 20px;
-      background-color: rgba(255, 228, 240, 0.85);
+      background-color: rgba(255, 228, 240, 0.9);
       border-radius: 10px;
       border: 2px solid #f4b2cc;
     }
 
-    input, select, textarea {
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
       display: block;
+      margin-bottom: 6px;
+      color: #874a63;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
       width: 100%;
-      margin: 10px 0;
       padding: 10px;
       border: 1px solid #e9a9c1;
       border-radius: 6px;
@@ -97,27 +118,18 @@
       box-sizing: border-box;
     }
 
-    input[type="checkbox"],
-    input[type="radio"] {
-      width: auto;
-      margin-right: 6px;
+    .checkbox-group, .radio-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 10px;
     }
 
-    label {
-      display: inline-block;
-      margin: 6px 8px 6px 0;
-      color: #874a63;
-    }
-
-    .form-group {
-      margin-bottom: 15px;
-    }
-
-    .section-title {
-      font-weight: bold;
-      margin-top: 15px;
-      display: block;
-      color: #d26c9b;
+    .checkbox-group label,
+    .radio-group label {
+      display: flex;
+      align-items: center;
+      font-weight: normal;
     }
 
     button {
@@ -129,7 +141,7 @@
       color: white;
       cursor: pointer;
       display: block;
-      margin: 20px auto 0;
+      margin: 30px auto 0;
       transition: background-color 0.3s ease;
     }
 
@@ -140,22 +152,20 @@
 </head>
 <body>
   <div class="container">
-    <header>
-      <h1>LCW</h1>
-    </header>
+    <h1>LCW 的可愛小檔案</h1>
 
     <img src="./cat.lcw.jpg" alt="I'm a cat" class="center-img" />
 
     <p style="text-align: center;">
-      <a href="https://www.pinterest.com/" target="_blank">googfle lin</a>
+      <a href="https://www.pinterest.com/" target="_blank">點我看靈感小天地 🐾</a>
     </p>
 
     <section>
       <h3>特長</h3>
       <ul>
-        <li>可愛</li>
-        <li>可愛</li>
-        <li><small>可愛</small></li>
+        <li>可愛到逆天</li>
+        <li>程式爆強</li>
+        <li><small>持續進化中 2000–2024</small></li>
       </ul>
     </section>
 
@@ -163,7 +173,7 @@
       <caption>行事曆</caption>
       <thead>
         <tr>
-          <th></th>
+          <th>分類</th>
           <th>上午</th>
           <th>中午</th>
           <th>下午</th>
@@ -187,33 +197,55 @@
 
     <form>
       <div class="form-group">
-        <input type="text" placeholder="請輸入寵物姓別">
-        <input type="number" placeholder="請輸入年齡">
-        <input type="tel" placeholder="請輸入寵物姓名">
-        <input type="password" placeholder="請輸入主人姓名">
-        <input type="email" placeholder="連絡電話">
+        <label for="gender">寵物姓別</label>
+        <input type="text" id="gender" placeholder="請輸入寵物姓別">
       </div>
 
       <div class="form-group">
-        <label><input type="checkbox" />是</label>
-        <label><input type="checkbox" />否</label>
+        <label for="age">年齡</label>
+        <input type="number" id="age" placeholder="請輸入年齡">
       </div>
 
       <div class="form-group">
-        <span class="section-title">喜歡的水果</span>
-        <label><input type="radio" name="fruit" />芒果</label>
-        <label><input type="radio" name="fruit" />香蕉</label>
-        <label><input type="radio" name="fruit" />橘子</label>
+        <label for="petname">寵物姓名</label>
+        <input type="tel" id="petname" placeholder="請輸入寵物姓名">
       </div>
 
       <div class="form-group">
-        <span class="section-title">備註</span>
-        <textarea rows="3"></textarea>
+        <label for="owner">主人姓名</label>
+        <input type="password" id="owner" placeholder="請輸入主人姓名">
       </div>
 
       <div class="form-group">
-        <span class="section-title">國家</span>
-        <select>
+        <label for="phone">連絡電話</label>
+        <input type="email" id="phone" placeholder="連絡電話">
+      </div>
+
+      <div class="form-group">
+        <label>是否黏人</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox"> 是</label>
+          <label><input type="checkbox"> 否</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>喜歡的水果</label>
+        <div class="radio-group">
+          <label><input type="radio" name="fruit"> 芒果</label>
+          <label><input type="radio" name="fruit"> 香蕉</label>
+          <label><input type="radio" name="fruit"> 橘子</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="note">備註</label>
+        <textarea id="note" rows="3" placeholder="可以填寫寵物的特殊癖好喔！"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="nation">國家</label>
+        <select id="nation">
           <option value="TW">台灣</option>
           <option value="JP">日本</option>
           <option value="US">美國</option>
@@ -221,7 +253,7 @@
         </select>
       </div>
 
-      <button>送出</button>
+      <button type="submit">送出表單</button>
     </form>
   </div>
 </body>
