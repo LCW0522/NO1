@@ -24,6 +24,12 @@
       background-color: rgba(255, 240, 245, 0.88);
       border-radius: 12px;
       box-shadow: 0 0 10px #f3c7d8;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     h1, h3 {
@@ -36,7 +42,7 @@
       display: flex;
       justify-content: center;
       gap: 20px;
-      margin: 40px 0 20px;
+      margin-bottom: 20px;
     }
 
     .image-row img {
@@ -105,7 +111,6 @@
       background-color: rgba(255, 228, 240, 0.9);
       border-radius: 10px;
       border: 2px solid #f4b2cc;
-      position: relative;
     }
 
     .form-group {
@@ -141,40 +146,25 @@
       background-color: #e890b3;
     }
 
-    .thanks-popup {
-      position: absolute;
-      top: 10px;
+    .thank-you {
+      position: fixed;
+      top: 30%;
       left: 50%;
       transform: translateX(-50%);
-      background-color: #fff0f5;
-      border: 1px solid #f4b2cc;
+      background-color: rgba(255, 182, 193, 0.95);
+      padding: 20px 30px;
+      border-radius: 12px;
       color: #874a63;
-      padding: 8px 16px;
-      border-radius: 8px;
       font-weight: bold;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      opacity: 0;
-      pointer-events: none;
-      z-index: 99;
+      font-size: 1.2em;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      animation: fadeOut 1.5s ease-out forwards;
+      z-index: 999;
     }
 
-    .thanks-popup.show {
-      animation: bubbleUp 1s ease forwards;
-    }
-
-    @keyframes bubbleUp {
-      0% {
-        opacity: 0;
-        transform: translate(-50%, 20px);
-      }
-      50% {
-        opacity: 1;
-        transform: translate(-50%, 0px);
-      }
-      100% {
-        opacity: 0;
-        transform: translate(-50%, -20px);
-      }
+    @keyframes fadeOut {
+      0% { opacity: 1; transform: translateX(-50%) scale(1); }
+      100% { opacity: 0; transform: translateX(-50%) scale(1.1); }
     }
   </style>
 </head>
@@ -188,7 +178,7 @@
     </div>
 
     <p style="text-align: center;">
-      <a href="https://www.pinterest.com/" target="_blank">媽咪愛的美甲參考連結 🐾</a>
+      <a href="https://www.pinterest.com/" target="_blank">媽咪愛的美甲參考連結</a>
     </p>
 
     <section>
@@ -227,8 +217,6 @@
     </table>
 
     <form id="petForm">
-      <div class="thanks-popup" id="thanksMsg">已成功送出，感謝您！</div>
-
       <div class="form-group">
         <label for="gender">寵物姓別</label>
         <input type="text" id="gender" placeholder="請輸入寵物姓別" style="width: 100%;">
@@ -247,7 +235,7 @@
       </div>
       <div class="form-group">
         <label for="phone">連絡電話</label>
-        <input type="email" id="phone" placeholder="請輸入聯絡電話" style="width: 100%;">
+        <input type="tel" id="phone" placeholder="請輸入聯絡電話" style="width: 100%;">
       </div>
 
       <div class="form-group">
@@ -294,20 +282,25 @@
 
       <button type="submit">送出表單</button>
     </form>
+
+    <div class="heart-container" id="heartContainer"></div>
   </div>
 
   <script>
-    const form = document.getElementById('petForm');
-    const thankPopup = document.getElementById('thanksMsg');
+    const form = document.getElementById("petForm");
 
-    form.addEventListener('submit', e => {
+    form.addEventListener("submit", function(e) {
       e.preventDefault();
-      thankPopup.classList.remove('show');
-      void thankPopup.offsetWidth;
-      thankPopup.classList.add('show');
+
+      const thank = document.createElement("div");
+      thank.className = "thank-you";
+      thank.textContent = "感謝填寫表單！";
+
+      document.body.appendChild(thank);
+
       setTimeout(() => {
-        thankPopup.classList.remove('show');
-      }, 1000); // 顯示 1 秒
+        thank.remove();
+      }, 1500);
     });
   </script>
 </body>
