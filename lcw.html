@@ -15,25 +15,6 @@
       background-attachment: fixed;
       font-family: Arial, sans-serif;
       color: #5c4a4a;
-      cursor: none;
-    }
-
-    .cursor-star {
-      position: fixed;
-      width: 10px;
-      height: 10px;
-      background: gold;
-      border-radius: 50%;
-      pointer-events: none;
-      box-shadow: 0 0 6px gold;
-      animation: fadeOut 0.6s forwards;
-    }
-
-    @keyframes fadeOut {
-      to {
-        opacity: 0;
-        transform: scale(2);
-      }
     }
 
     .container {
@@ -75,31 +56,10 @@
       border-radius: 12px;
       border: 4px solid #f7b8d0;
       transition: transform 0.3s ease-in-out;
-      cursor: pointer;
     }
 
     .image-row img:hover {
-      transform: scale(1.08);
-    }
-
-    .lightbox {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0,0,0,0.7);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 999;
-    }
-
-    .lightbox img {
-      max-width: 90vw;
-      max-height: 90vh;
-      border-radius: 12px;
-      box-shadow: 0 0 20px white;
+      transform: rotate(5deg) scale(1.05);
     }
 
     a {
@@ -192,20 +152,31 @@
       background-color: #e890b3;
     }
 
-    .thank-popup {
+    /* 感謝訊息泡泡動畫 */
+    .bubble {
       position: fixed;
-      top: 50%;
+      bottom: 100px;
       left: 50%;
-      transform: translate(-50%, -50%);
-      background: #fff0f5;
-      padding: 20px 30px;
-      border: 2px solid #f4b2cc;
-      border-radius: 10px;
-      box-shadow: 0 0 20px pink;
-      display: none;
-      z-index: 999;
-      font-size: 1.2em;
-      color: #c2618c;
+      transform: translateX(-50%);
+      background-color: #f7b8d0;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 20px;
+      box-shadow: 0 0 8px #e28db3;
+      font-weight: bold;
+      animation: fadeout 1.2s ease forwards;
+      z-index: 9999;
+    }
+
+    @keyframes fadeout {
+      0% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+      100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-50px);
+      }
     }
   </style>
 </head>
@@ -214,12 +185,12 @@
     <h1>LCW</h1>
 
     <div class="image-row">
-      <img src="./cat.lcw.jpg" alt="cat 1" class="lightbox-trigger">
-      <img src="./cat-2.lcw.jpg" alt="cat 2" class="lightbox-trigger">
+      <img src="./cat.lcw.jpg" alt="cat 1">
+      <img src="./cat-2.lcw.jpg" alt="cat 2">
     </div>
 
     <p style="text-align: center;">
-      <a href="https://www.pinterest.com/" target="_blank">媽咪愛的美甲參考連結 🐾</a>
+      <a href="https://www.pinterest.com/" target="_blank">媽咪愛的美甲參考連結</a>
     </p>
 
     <section>
@@ -258,81 +229,88 @@
     </table>
 
     <form id="petForm">
-      <div class="form-group"><label>寵物姓別</label><input type="text" placeholder="請輸入寵物姓別" style="width:100%"></div>
-      <div class="form-group"><label>年齡</label><input type="number" placeholder="請輸入年齡" style="width:100%"></div>
-      <div class="form-group"><label>寵物姓名</label><input type="text" placeholder="請輸入寵物姓名" style="width:100%"></div>
-      <div class="form-group"><label>主人姓名</label><input type="text" placeholder="請輸入主人姓名" style="width:100%"></div>
-      <div class="form-group"><label>連絡電話</label><input type="text" placeholder="請輸入聯絡電話" style="width:100%"></div>
+      <div class="form-group">
+        <label for="gender">寵物姓別</label>
+        <input type="text" id="gender" placeholder="請輸入寵物姓別" style="width: 100%;">
+      </div>
+      <div class="form-group">
+        <label for="age">年齡</label>
+        <input type="number" id="age" placeholder="請輸入年齡" style="width: 100%;">
+      </div>
+      <div class="form-group">
+        <label for="petname">寵物姓名</label>
+        <input type="text" id="petname" placeholder="請輸入寵物姓名" style="width: 100%;">
+      </div>
+      <div class="form-group">
+        <label for="owner">主人姓名</label>
+        <input type="text" id="owner" placeholder="請輸入主人姓名" style="width: 100%;">
+      </div>
+      <div class="form-group">
+        <label for="phone">連絡電話</label>
+        <input type="text" id="phone" placeholder="請輸入聯絡電話" style="width: 100%;">
+      </div>
 
       <div class="form-group">
-        <div style="display:flex;align-items:center;">
-          <span style="width:100px;font-weight:bold;color:#874a63;">是否黏人</span>
-          <label style="margin-right:40px;"><input type="radio" name="clingy"> 是</label>
-          <label><input type="radio" name="clingy"> 否</label>
+        <div style="display: flex; align-items: center;">
+          <span style="display: inline-block; width: 100px; font-weight: bold; color: #874a63;">是否黏人</span>
+          <label style="margin-right: 40px;">
+            <input type="radio" name="clingy" value="yes"> 是
+          </label>
+          <label>
+            <input type="radio" name="clingy" value="no"> 否
+          </label>
         </div>
       </div>
 
       <div class="form-group">
-        <div style="display:flex;align-items:center;">
-          <span style="width:100px;font-weight:bold;color:#874a63;">喜歡的零食</span>
-          <label style="margin-right:40px;"><input type="checkbox" name="snack"> 凍乾</label>
-          <label style="margin-right:40px;"><input type="checkbox" name="snack"> 蝦子</label>
-          <label><input type="checkbox" name="snack"> 鮭魚</label>
+        <div style="display: flex; align-items: center;">
+          <span style="display: inline-block; width: 100px; font-weight: bold; color: #874a63;">喜歡的零食</span>
+          <label style="margin-right: 40px;">
+            <input type="checkbox" name="snack" value="freeze"> 凍乾
+          </label>
+          <label style="margin-right: 40px;">
+            <input type="checkbox" name="snack" value="shrimp"> 蝦子
+          </label>
+          <label>
+            <input type="checkbox" name="snack" value="salmon"> 鮭魚
+          </label>
         </div>
       </div>
 
-      <div class="form-group"><label>備註</label><textarea rows="3" placeholder="請輸入寵物喜好或注意事項" style="width:100%"></textarea></div>
+      <div class="form-group">
+        <label>備註</label>
+        <textarea rows="3" placeholder="請輸入寵物喜好或注意事項" style="width: 100%"></textarea>
+      </div>
 
-      <div class="form-group"><label>國家</label>
-        <select>
-          <option>台灣</option><option>日本</option><option>美國</option><option>中國</option>
+      <div class="form-group">
+        <label for="nation">國家</label>
+        <select id="nation">
+          <option value="TW">台灣</option>
+          <option value="JP">日本</option>
+          <option value="US">美國</option>
+          <option value="CN">中國</option>
         </select>
       </div>
 
       <button type="submit">送出表單</button>
     </form>
-
-    <div class="thank-popup" id="thankPopup">🎉 感謝填寫！</div>
-    <div class="lightbox" id="lightbox"><img src="" alt="preview" id="lightboxImg" /></div>
   </div>
 
-  <!-- 滑鼠拖尾星星特效 -->
-  <script>
-    document.addEventListener('mousemove', e => {
-      const star = document.createElement('div');
-      star.className = 'cursor-star';
-      star.style.left = e.pageX + 'px';
-      star.style.top = e.pageY + 'px';
-      document.body.appendChild(star);
-      setTimeout(() => star.remove(), 600);
-    });
-  </script>
-
-  <!-- 圖片 Lightbox -->
-  <script>
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightboxImg');
-    document.querySelectorAll('.lightbox-trigger').forEach(img => {
-      img.addEventListener('click', () => {
-        lightbox.style.display = 'flex';
-        lightboxImg.src = img.src;
-      });
-    });
-    lightbox.addEventListener('click', () => {
-      lightbox.style.display = 'none';
-    });
-  </script>
-
-  <!-- 表單送出彈出泡泡 -->
   <script>
     const form = document.getElementById('petForm');
-    const thankPopup = document.getElementById('thankPopup');
-    form.addEventListener('submit', e => {
+
+    form.addEventListener('submit', function(e) {
       e.preventDefault();
-      thankPopup.style.display = 'block';
+
+      const bubble = document.createElement('div');
+      bubble.className = 'bubble';
+      bubble.innerText = '感謝您的填寫！';
+
+      document.body.appendChild(bubble);
+
       setTimeout(() => {
-        thankPopup.style.display = 'none';
-      }, 2000);
+        bubble.remove();
+      }, 1200);
     });
   </script>
 </body>
