@@ -281,17 +281,22 @@
     </form>
   </div>
 
-  <script>
+   <script>
     const form = document.getElementById('petForm');
-    const thanksMsg = document.getElementById('thanksMsg');
 
-    form.addEventListener('submit', function (e) {
-  e.preventDefault();
-  thanksMsg.classList.add('show');
-  setTimeout(() => {
-    thanksMsg.classList.remove('show');
-  }, 1500); // 顯示時間：1 秒
-});
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const bubble = document.createElement('div');
+      bubble.className = 'bubble';
+      bubble.innerText = '感謝您的填寫！';
+
+      document.body.appendChild(bubble);
+
+      setTimeout(() => {
+        bubble.remove();
+      }, 1200);
+    });
   </script>
 </body>
 </html>
