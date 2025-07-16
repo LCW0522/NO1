@@ -286,12 +286,12 @@
     const thanksMsg = document.getElementById('thanksMsg');
 
     form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      thanksMsg.classList.add('show');
-      setTimeout(() => {
-        thanksMsg.classList.remove('show');
-      }, 1500); // 顯示 1.5 秒
-    });
+  e.preventDefault();
+  thanksMsg.classList.add('show');
+  setTimeout(() => {
+    thanksMsg.classList.remove('show');
+  }, 1500); // 顯示時間：1 秒
+});
   </script>
 </body>
 </html>
