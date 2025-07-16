@@ -115,6 +115,8 @@
     }
 
     input, select, textarea {
+      width: 100%;
+      max-width: 700px;
       padding: 10px;
       border: 1px solid #e9a9c1;
       border-radius: 6px;
@@ -146,7 +148,6 @@
       background-color: #e890b3;
     }
 
-    /* 愛心動畫區塊 */
     .heart-container {
       position: fixed;
       bottom: 30px;
@@ -242,96 +243,90 @@
       </tbody>
     </table>
 
-<form>
-  <div class="form-group">
-    <label for="gender">寵物姓別</label>
-    <input type="text" id="gender" placeholder="請輸入寵物姓別" style="width: 100%;">
+    <form>
+      <div class="form-group">
+        <label for="gender">寵物姓別</label>
+        <input type="text" id="gender" placeholder="請輸入寵物姓別">
+      </div>
+
+      <div class="form-group">
+        <label for="age">年齡</label>
+        <input type="number" id="age" placeholder="請輸入年齡">
+      </div>
+
+      <div class="form-group">
+        <label for="petname">寵物姓名</label>
+        <input type="text" id="petname" placeholder="請輸入寵物姓名">
+      </div>
+
+      <div class="form-group">
+        <label for="owner">主人姓名</label>
+        <input type="password" id="owner" placeholder="請輸入主人姓名">
+      </div>
+
+      <div class="form-group">
+        <label for="phone">連絡電話</label>
+        <input type="email" id="phone" placeholder="請輸入聯絡電話">
+      </div>
+
+      <div class="form-group">
+        <div style="display: flex; align-items: center;">
+          <span style="display: inline-block; width: 100px; font-weight: bold; color: #874a63;">是否黏人</span>
+          <label style="margin-right: 40px;">
+            <input type="checkbox" name="clingy" value="yes"> 是
+          </label>
+          <label>
+            <input type="checkbox" name="clingy" value="no"> 否
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div style="display: flex; align-items: center;">
+          <span style="display: inline-block; width: 100px; font-weight: bold; color: #874a63;">喜歡的零食</span>
+          <label style="margin-right: 40px;">
+            <input type="radio" name="snack" value="freeze"> 凍乾
+          </label>
+          <label style="margin-right: 40px;">
+            <input type="radio" name="snack" value="shrimp"> 蝦子
+          </label>
+          <label>
+            <input type="radio" name="snack" value="salmon"> 鮭魚
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>備註</label>
+        <textarea rows="3" placeholder="請輸入寵物喜好或注意事項"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="nation">國家</label>
+        <select id="nation">
+          <option value="TW">台灣</option>
+          <option value="JP">日本</option>
+          <option value="US">美國</option>
+          <option value="CN">中國</option>
+        </select>
+      </div>
+
+      <button type="submit">送出表單</button>
+    </form>
+
+    <div class="heart-container" id="heartContainer"></div>
   </div>
 
-    <div class="form-group">
-    <label for="age">年齡</label>
-    <input type="number" id="age" placeholder="請輸入年齡" style="width: 100%;">
-  </div>
-
-  
-    <div class="form-group">
-    <label for="petname">寵物姓名</label>
-    <input type="text" id="gender" placeholder="請輸入寵物姓名" style="width: 100%;">
-  </div>
-
-
-  <div class="form-group">
-    <label for="owner">主人姓名</label>
-    <input type="password" id="owner" placeholder="請輸入主人姓名" style="width: 100%;">
-  </div>
-
-  <div class="form-group">
-    <label for="phone">連絡電話</label>
-    <input type="email" id="phone" placeholder="請輸入聯絡電話" style="width: 100%;">
-  </div>
-
-<div class="form-group">
-  <div style="display: flex; align-items: center;">
-    <span style="display: inline-block; width: 100px; font-weight: bold; color: #874a63;">是否黏人</span>
-    <label style="margin-right: 40px;">
-      <input type="checkbox" name="clingy" value="yes"> 是
-    </label>
-    <label>
-      <input type="checkbox" name="clingy" value="no"> 否
-    </label>
-  </div>
-</div>
-
-<div class="form-group">
-  <div style="display: flex; align-items: center;">
-    <span style="display: inline-block; width: 100px; font-weight: bold; color: #874a63;">喜歡的零食</span>
-    <label style="margin-right: 40px;">
-      <input type="radio" name="snack" value="freeze"> 凍乾
-    </label>
-    <label style="margin-right: 40px;">
-      <input type="radio" name="snack" value="shrimp"> 蝦子
-    </label>
-    <label>
-      <input type="radio" name="snack" value="salmon"> 鮭魚
-    </label>
-  </div>
-</div>
-
-  <div class="form-group">
-    <label>備註</label>
-    <textarea rows="3" placeholder="請輸入寵物喜好或注意事項" style="width: 100%; max-width: 700px;"></textarea>
-  </div>
-
-  <div class="form-group">
-    <label for="nation">國家</label>
-    <select id="nation">
-      <option value="TW">台灣</option>
-      <option value="JP">日本</option>
-      <option value="US">美國</option>
-      <option value="CN">中國</option>
-    </select>
-  </div>
-
-  <button type="submit">送出表單</button>
-</form>
-
-
-  <div class="heart-container" id="heartContainer"></div>
-
- 
   <script>
     const button = document.querySelector('button');
     const heartContainer = document.getElementById('heartContainer');
 
     button.addEventListener('click', function (e) {
-      e.preventDefault(); // 不跳轉表單
-
+      e.preventDefault();
       const heart = document.createElement('div');
       heart.classList.add('heart');
-      heart.style.left = `${Math.random() * 100 - 50}px`; // 隨機偏移
-
+      heart.style.left = `${Math.random() * 100 - 50}px`;
       heartContainer.appendChild(heart);
-
       setTimeout(() => {
         heart.remove();
       }, 1200);
