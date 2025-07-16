@@ -24,12 +24,13 @@
       background-color: rgba(255, 240, 245, 0.88);
       border-radius: 12px;
       box-shadow: 0 0 10px #f3c7d8;
+      animation: fadeIn 1s ease-in-out;
     }
 
-    h1 {
+    h1, h3 {
       text-align: center;
       color: #d281a2;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
 
     .image-row {
@@ -111,16 +112,13 @@
       margin-bottom: 15px;
     }
 
-    .form-group label {
-      display: inline-block;
-      width: 100px;
+    label {
+      display: block;
       color: #874a63;
       font-weight: bold;
     }
 
-    .form-group input, .form-group select, .form-group textarea {
-      display: inline-block;
-      width: calc(100% - 110px);
+    input, select, textarea {
       padding: 10px;
       border: 1px solid #e9a9c1;
       font-size: 1em;
@@ -216,26 +214,26 @@
     <form id="petForm">
       <div class="form-group">
         <label for="gender">寵物姓別</label>
-        <input type="text" id="gender" placeholder="請輸入寵物姓別">
+        <input type="text" id="gender" placeholder="請輸入寵物姓別" style="width: 100%;">
       </div>
       <div class="form-group">
         <label for="age">年齡</label>
-        <input type="number" id="age" placeholder="請輸入年齡">
+        <input type="number" id="age" placeholder="請輸入年齡" style="width: 100%;">
       </div>
       <div class="form-group">
         <label for="petname">寵物姓名</label>
-        <input type="text" id="petname" placeholder="請輸入寵物姓名">
+        <input type="text" id="petname" placeholder="請輸入寵物姓名" style="width: 100%;">
       </div>
       <div class="form-group">
         <label for="owner">主人姓名</label>
-        <input type="text" id="owner" placeholder="請輸入主人姓名">
+        <input type="text" id="owner" placeholder="請輸入主人姓名" style="width: 100%;">
       </div>
       <div class="form-group">
         <label for="phone">連絡電話</label>
-        <input type="tel" id="phone" placeholder="請輸入聯絡電話">
+        <input type="tel" id="phone" placeholder="請輸入聯絡電話" style="width: 100%;">
       </div>
 
-       <div class="form-group">
+      <div class="form-group">
         <div style="display: flex; align-items: center;">
           <span style="display: inline-block; width: 100px; font-weight: bold; color: #874a63;">是否黏人</span>
           <label style="margin-right: 40px;">
@@ -247,7 +245,7 @@
         </div>
       </div>
 
-       <div class="form-group">
+      <div class="form-group">
         <div style="display: flex; align-items: center;">
           <span style="display: inline-block; width: 100px; font-weight: bold; color: #874a63;">喜歡的零食</span>
           <label style="margin-right: 40px;">
@@ -264,7 +262,7 @@
 
       <div class="form-group">
         <label>備註</label>
-        <textarea rows="3" placeholder="請輸入寵物喜好或注意事項"></textarea>
+        <textarea rows="3" placeholder="請輸入寵物喜好或注意事項" style="width: 100%"></textarea>
       </div>
 
       <div class="form-group">
@@ -279,6 +277,8 @@
 
       <button type="submit">送出表單</button>
     </form>
+
+    <div class="heart-container" id="heartContainer"></div>
   </div>
 
   <script>
@@ -287,25 +287,10 @@
     form.addEventListener("submit", function(e) {
       e.preventDefault();
 
-      const gender = document.getElementById("gender").value.trim();
-      const age = document.getElementById("age").value.trim();
-      const petname = document.getElementById("petname").value.trim();
-      const owner = document.getElementById("owner").value.trim();
-      const phone = document.getElementById("phone").value.trim();
-
-      if (!gender || !age || !petname || !owner || !phone) {
-        alert("請完整填寫所有欄位！");
-        return;
-      }
-
-      if (isNaN(phone)) {
-        alert("電話欄位請填寫數字！");
-        return;
-      }
-
       const thank = document.createElement("div");
       thank.className = "thank-you";
       thank.textContent = "感謝填寫表單！";
+
       document.body.appendChild(thank);
 
       setTimeout(() => {
