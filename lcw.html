@@ -36,7 +36,7 @@
       display: flex;
       justify-content: center;
       gap: 20px;
-      margin: 40px 0 20px; /* 👈 圖片整體往下移 */
+      margin: 40px 0 20px;
     }
 
     .image-row img {
@@ -143,7 +143,7 @@
 
     .thanks-popup {
       position: absolute;
-      top: -40px;
+      top: 10px;
       left: 50%;
       transform: translateX(-50%);
       background-color: #fff0f5;
@@ -155,11 +155,26 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.3s ease;
+      z-index: 99;
     }
 
     .thanks-popup.show {
-      opacity: 1;
+      animation: bubbleUp 1s ease forwards;
+    }
+
+    @keyframes bubbleUp {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, 20px);
+      }
+      50% {
+        opacity: 1;
+        transform: translate(-50%, 0px);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(-50%, -20px);
+      }
     }
   </style>
 </head>
@@ -282,14 +297,18 @@
   </div>
 
   <script>
-  const form = document.getElementById('petForm');
-  const thankPopup = document.getElementById('thanksMsg');
+    const form = document.getElementById('petForm');
+    const thankPopup = document.getElementById('thanksMsg');
 
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    thankPopup.classList.add('show');
-    setTimeout(() => {
+    form.addEventListener('submit', e => {
+      e.preventDefault();
       thankPopup.classList.remove('show');
-    }, 1500);
-  });
-</script>
+      void thankPopup.offsetWidth;
+      thankPopup.classList.add('show');
+      setTimeout(() => {
+        thankPopup.classList.remove('show');
+      }, 1000); // 顯示 1 秒
+    });
+  </script>
+</body>
+</html>
