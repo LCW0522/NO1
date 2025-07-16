@@ -39,6 +39,11 @@
       height: auto;
       border-radius: 12px;
       border: 4px solid #f7b8d0;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .center-img:hover {
+      transform: rotate(7deg) scale(1.05);
     }
 
     a {
@@ -120,16 +125,9 @@
 
     .checkbox-group, .radio-group {
       display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 10px;
-    }
-
-    .checkbox-group label,
-    .radio-group label {
-      display: flex;
       align-items: center;
-      font-weight: normal;
+      gap: 12px;
+      margin-top: 8px;
     }
 
     button {
@@ -148,96 +146,45 @@
     button:hover {
       background-color: #e890b3;
     }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>LCW</h1>
 
-    <img src="./cat.lcw.jpg" alt="I'm a cat" class="center-img" />
+    /* 愛心動畫區塊 */
+    .heart-container {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      pointer-events: none;
+      z-index: 1000;
+    }
 
-    <p style="text-align: center;">
-      <a href="https://www.pinterest.com/" target="_blank">媽咪愛的美甲參考連結 🐾</a>
-    </p>
+    .heart {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      background-color: #f78fb3;
+      transform: rotate(45deg);
+      animation: floatUp 1.2s ease-out forwards;
+    }
 
-    <section>
-      <h3>自介</h3>
-      <ul>
-        <li>男生</li>
-        <li>可愛</li>
-        <li><small>111.05</small></li>
-      </ul>
-    </section>
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      background-color: #f78fb3;
+      border-radius: 50%;
+    }
 
-    <table>
-      <caption>行事曆</caption>
-      <thead>
-        <tr>
-          <th>分類</th>
-          <th>上午</th>
-          <th>中午</th>
-          <th>下午</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>專業能力</td>
-          <td>吃飯</td>
-          <td>睡覺</td>
-          <td>搗蛋</td>
-        </tr>
-        <tr>
-          <td>飲食</td>
-          <td>鮭魚</td>
-          <td>紅蘿蔔</td>
-          <td>雞肉</td>
-        </tr>
-      </tbody>
-    </table>
+    .heart::before {
+      top: -12px;
+      left: 0;
+    }
 
-    <form>
-      <div class="form-group">
-        <input type="text" placeholder="請輸入寵物姓別">
-        <input type="number" placeholder="請輸入年齡">
-        <input type="tel" placeholder="請輸入寵物姓名">
-        <input type="password" placeholder="請輸入主人姓名">
-        <input type="email" placeholder="連絡電話">
-      </div>
+    .heart::after {
+      left: -12px;
+      top: 0;
+    }
 
-      <div class="form-group">
-        <label>是否黏人</label>
-        <div class="checkbox-group">
-          <label><input type="checkbox"> 是</label>
-          <label><input type="checkbox"> 否</label>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label>喜歡的零食</label>
-        <div class="radio-group">
-          <label><input type="radio" name="fruit"> 凍乾</label>
-          <label><input type="radio" name="fruit"> 蝦子</label>
-          <label><input type="radio" name="fruit"> 鮭魚</label>
-        </div>
-      </div>
-
-           <div class="form-group">
-        <span class="section-title">備註</span>
-        <textarea rows="3"></textarea>
-      </div>
-
-      <div class="form-group">
-        <label for="nation">國家</label>
-        <select id="nation">
-          <option value="TW">台灣</option>
-          <option value="JP">日本</option>
-          <option value="US">美國</option>
-          <option value="CN">中國</option>
-        </select>
-      </div>
-
-      <button type="submit">送出表單</button>
-    </form>
-  </div>
-</body>
-</html>
+    @keyframes floatUp {
+      0
