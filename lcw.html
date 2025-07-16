@@ -281,16 +281,15 @@
     </form>
   </div>
 
-   <script>
-    const form = document.getElementById('petForm');
-    const thankPopup = document.getElementById('thankPopup');
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      thankPopup.style.display = 'block';
-      setTimeout(() => {
-        thankPopup.style.display = 'none';
-      }, 2000);
-    });
-  </script>
-</body>
-</html>
+  <script>
+  const form = document.getElementById('petForm');
+  const thankPopup = document.getElementById('thanksMsg');
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    thankPopup.classList.add('show');
+    setTimeout(() => {
+      thankPopup.classList.remove('show');
+    }, 1500);
+  });
+</script>
