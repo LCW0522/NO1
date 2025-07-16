@@ -1,3 +1,18 @@
 .header {
   background-color: aqua;
 }
+div {
+}
+* {
+  font: size 1rem
+}
+.red-text,
+.red {
+  color:red；
+}
+.blue .blue-text {
+  color: blue；
+}
+.gree.gree-text {
+  color: green；
+}

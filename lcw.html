@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LCW</title>
-  <link rel="stylesheet" href="./css.css" />
   <style>
     body {
       margin: 0;
@@ -15,18 +14,27 @@
       background-repeat: no-repeat;
       background-attachment: fixed;
       font-family: Arial, sans-serif;
-      color: #5c4a4a; /* 深灰偏粉，適合嫩粉 */
+      color: #5c4a4a;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: rgba(255, 240, 245, 0.8);
+      border-radius: 12px;
     }
 
     h1, h3 {
       text-align: center;
       color: #d281a2;
+      margin: 20px 0;
     }
 
     .center-img {
       display: block;
-      margin: 0 auto;
-      max-width: 100%;
+      margin: 0 auto 20px;
+      width: 300px;
       height: auto;
       border-radius: 12px;
       border: 4px solid #f7b8d0;
@@ -34,8 +42,12 @@
 
     ul {
       text-align: center;
-      list-style-position: inside;
+      list-style: none;
       padding: 0;
+    }
+
+    ul li {
+      margin: 8px 0;
     }
 
     a {
@@ -45,10 +57,10 @@
     }
 
     table {
-      width: 90%;
-      margin: 20px auto;
+      width: 100%;
       border-collapse: collapse;
-      background-color: rgba(255, 240, 245, 0.95); /* 嫩粉白透明背景 */
+      margin-top: 20px;
+      background-color: rgba(255, 250, 252, 0.95);
       border: 2px solid #f4b2cc;
     }
 
@@ -63,12 +75,11 @@
       font-weight: bold;
       font-size: 1.3em;
       color: #c2618c;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     form {
-      width: 90%;
-      margin: 0 auto 30px;
+      margin-top: 30px;
       padding: 20px;
       background-color: rgba(255, 228, 240, 0.85);
       border-radius: 10px;
@@ -77,12 +88,13 @@
 
     input, select, textarea {
       display: block;
-      width: 90%;
-      margin: 8px auto;
-      padding: 8px;
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
       border: 1px solid #e9a9c1;
       border-radius: 6px;
       font-size: 1em;
+      box-sizing: border-box;
     }
 
     input[type="checkbox"],
@@ -93,21 +105,25 @@
 
     label {
       display: inline-block;
-      margin: 6px;
+      margin: 6px 8px 6px 0;
       color: #874a63;
     }
 
-    .blue-text, .green-text {
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .section-title {
       font-weight: bold;
-      margin-bottom: 4px;
-      display: inline-block;
+      margin-top: 15px;
+      display: block;
       color: #d26c9b;
     }
 
     button {
       background-color: #f7b8d0;
       border: none;
-      padding: 10px 20px;
+      padding: 12px 24px;
       border-radius: 6px;
       font-size: 1em;
       color: white;
@@ -123,79 +139,90 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>LCW</h1>
-  </header>
+  <div class="container">
+    <header>
+      <h1>LCW</h1>
+    </header>
 
-  <img src="./cat.lcw.jpg" alt="I'm a cat" class="center-img" />
+    <img src="./cat.lcw.jpg" alt="I'm a cat" class="center-img" />
 
-  <p style="text-align: center;">
-    <a href="https://www.pinterest.com/" target="_blank">googfle lin</a>
-  </p>
+    <p style="text-align: center;">
+      <a href="https://www.pinterest.com/" target="_blank">googfle lin</a>
+    </p>
 
-  <section>
-    <h3>特長</h3>
-    <ul>
-      <li>頭髮</li>
-      <li>程式</li> 
-      <li><small>2000-2024</small></li>
-    </ul>
-  </section>
+    <section>
+      <h3>特長</h3>
+      <ul>
+        <li>頭髮</li>
+        <li>程式</li>
+        <li><small>2000-2024</small></li>
+      </ul>
+    </section>
 
-  <table>
-    <caption>行事曆</caption>
-    <thead>
-      <tr>
-        <th></th>
-        <th>上午</th>
-        <th>中午</th>
-        <th>下午</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>專業能力</td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>飲食</td>
-        <td>漢堡</td>
-        <td>雞排</td>
-        <td>串串</td>
-      </tr>
-    </tbody>
-  </table>
+    <table>
+      <caption>行事曆</caption>
+      <thead>
+        <tr>
+          <th></th>
+          <th>上午</th>
+          <th>中午</th>
+          <th>下午</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>專業能力</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>飲食</td>
+          <td>漢堡</td>
+          <td>雞排</td>
+          <td>串串</td>
+        </tr>
+      </tbody>
+    </table>
 
-  <form>
-    <input type="text" placeholder="請輸入姓別">
-    <input type="number" placeholder="請輸入年齡">
-    <input type="tel" placeholder="請輸入姓名">
-    <input type="password" placeholder="電話">
-    <input type="email" placeholder="EMAIL">
-    <label><input type="checkbox" />是</label>
-    <label><input type="checkbox" />否</label>
-    <div>
-      喜歡的水果
-      <label><input type="radio" name="fruit" />芒果</label>
-      <label><input type="radio" name="fruit" />香蕉</label>
-      <label><input type="radio" name="fruit" />橘子</label>
-    </div>
-    <div class="blue">
-      <span class="blue-text">備註</span>
-      <textarea rows="3"></textarea>
-    </div>
-    <div>
-      <span class="green-text">國家</span>
-      <select>
-        <option value="TW">台灣</option>
-        <option value="JP">日本</option>
-        <option value="US">美國</option>
-        <option value="CN">中國</option>
-      </select>
-    </div>
-    <button>送出</button>
-  </form>
+    <form>
+      <div class="form-group">
+        <input type="text" placeholder="請輸入姓別">
+        <input type="number" placeholder="請輸入年齡">
+        <input type="tel" placeholder="請輸入姓名">
+        <input type="password" placeholder="電話">
+        <input type="email" placeholder="EMAIL">
+      </div>
+
+      <div class="form-group">
+        <label><input type="checkbox" />是</label>
+        <label><input type="checkbox" />否</label>
+      </div>
+
+      <div class="form-group">
+        <span class="section-title">喜歡的水果</span>
+        <label><input type="radio" name="fruit" />芒果</label>
+        <label><input type="radio" name="fruit" />香蕉</label>
+        <label><input type="radio" name="fruit" />橘子</label>
+      </div>
+
+      <div class="form-group">
+        <span class="section-title">備註</span>
+        <textarea rows="3"></textarea>
+      </div>
+
+      <div class="form-group">
+        <span class="section-title">國家</span>
+        <select>
+          <option value="TW">台灣</option>
+          <option value="JP">日本</option>
+          <option value="US">美國</option>
+          <option value="CN">中國</option>
+        </select>
+      </div>
+
+      <button>送出</button>
+    </form>
+  </div>
 </body>
 </html>
